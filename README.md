@@ -2,10 +2,11 @@
 Salmon Tunnel is a client-server software that let you encrypt your network communications.  
 It is an alternative to SSH tunneling and works with VNC, FTP, and any other TCP related protocol.  
 Published under MIT License  
-
+  
 ### Supports:
-Password-Based authentication.  
-Message Authentication (data integrity).  
+- AES-256 encryption in CTR Mode  
+- HMAC SHA-256 authentication (data integrity)  
+- SHA-256 PBKDF2 key derivation   
 Provided Java and Android server/clients.  
 Salmon Tunnel is currently in beta stage.  
 

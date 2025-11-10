@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SalmonTunnel.main:jar">
+    <output-path>$PROJECT_DIR$/../../../output/java</output-path>
+    <root id="root">
+      <element id="file-copy" path="$PROJECT_DIR$/scripts/salmon-tunnel.bat" />
+      <element id="file-copy" path="$PROJECT_DIR$/scripts/salmon-tunnel.sh" />
+	  <element id="file-copy" path="$PROJECT_DIR$/../../../LICENSE" />
+	  <element id="file-copy" path="$PROJECT_DIR$/README.txt" />
+      <element id="directory" name="salmon">
+        <element id="library" level="project" name="Gradle: com.mku.salmon:salmon-core:3.0.1" />
+      </element>
+      <element id="archive" name="salmon-tunnel.jar">
+        <element id="module-output" name="SalmonTunnel.main" />
+        <element id="dir-copy" path="$PROJECT_DIR$/src/main/resources" />
+      </element>
+    </root>
+  </artifact>
+</component>

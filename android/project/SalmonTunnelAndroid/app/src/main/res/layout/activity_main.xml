@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/app_name"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:padding="10dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:text="@string/source_port" />
+
+                <EditText
+                    android:id="@+id/source_port"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_weight="0.5"
+                    android:contentDescription="@string/source_port"
+                    android:hint="@string/source_port"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:text="@string/target_port" />
+
+                <EditText
+                    android:id="@+id/target_port"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_weight="0.5"
+                    android:contentDescription="@string/target_port"
+                    android:hint="@string/target_port"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:text="@string/host" />
+
+                <EditText
+                    android:id="@+id/host"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_weight="0.5"
+                    android:contentDescription="@string/host"
+                    android:hint="@string/host"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:text="@string/password" />
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_weight="0.5"
+                    android:contentDescription="@string/password"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:padding="10dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:text="@string/service_device" />
+
+                <CheckBox
+                    android:id="@+id/service_device"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_weight="0.5"
+                    android:text="" />
+
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:text="@string/buffer_size" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/buffer_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:stepSize="4"
+                    android:value="32"
+                    android:valueFrom="4"
+                    android:valueTo="128" />
+
+            </TableRow>
+        </TableLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="20dp">
+
+            <ImageButton
+                android:id="@+id/toggle"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_gravity="center_horizontal"
+                android:padding="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/off" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -3,7 +3,7 @@ plugins {
 }
 
 ext {
-    salmonLibVersion = '3.0.1'
+    salmonLibVersion = '3.0.2'
 }
 
 android {
@@ -15,7 +15,7 @@ android {
         minSdk 24
         targetSdk 34
         versionCode 1
-        versionName "1.0"
+        versionName "0.9.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,7 +36,6 @@ android {
 
     sourceSets {
         main.java.srcDirs += '../../../../java/src'
-        test.java.srcDirs += '../../../../java/test/salmon-tunnel-test-java/'
     }
 }
 

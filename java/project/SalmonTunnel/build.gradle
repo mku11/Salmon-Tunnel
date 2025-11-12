@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.mku.salmon.tunnel'
-version '0.9.0beta'
+version '0.9.1'
 
 ext {
     junitVersion = '5.9.1'

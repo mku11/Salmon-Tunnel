@@ -1,7 +1,6 @@
 build
 *.zip
 *.tar
-*.jar
 **/.idea/workspace.xml 
 **/.idea/jarRepositories.xml
 **/.idea/uiDesigner.xml
@@ -18,3 +17,4 @@ out
 output
 app_package
 /libs
+java/project/SalmonTunnel/libs

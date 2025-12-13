@@ -195,11 +195,11 @@ public class TunnelService extends Service {
     public void onDestroy() {
 		if (manager!=null)
 			manager.close();
-        if(statusListener!=null)
-            statusListener.accept(StatusEvent.STOPPED, null);
-        instance = null;
-        manager = null;
-    }
+		if(statusListener!=null)
+			statusListener.accept(StatusEvent.STOPPED, null);
+		instance = null;
+		manager = null;
+	}
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {

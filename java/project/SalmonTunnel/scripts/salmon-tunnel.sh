@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 CURRDIR=$(pwd)
 export SALMON_CLASS_PATH="$CURRDIR/*:$CURRDIR/libs/*:$CURRDIR/salmon/*"
 export MAIN_CLASS=com.mku.salmon.tunnel.main.Main

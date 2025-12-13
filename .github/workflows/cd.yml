@@ -23,7 +23,7 @@ jobs:
     strategy:
       matrix:
         java_version: [11]
-        os: [windows-latest]
+        os: [ubuntu-latest]
     name: build.java.${{ matrix.java_version }}.${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
@@ -35,9 +35,9 @@ jobs:
         ref: ${{ github.ref }}
     
     - if: runner.os == 'Windows'
-      name: Setup on Windows
-      shell: cmd
-      run: setup.bat
+      name: Setup on Linux
+      shell: bash
+      run: ./setup.sh
     
     # Toolchains and Build envs
     - name: Setup Java
@@ -60,20 +60,20 @@ jobs:
           ${{ runner.os }}-gradle-
     
     # Gradle Build Java App
-    - if: runner.os == 'Windows'
-      name: Build Java App on Windows
-      shell: cmd
-      run: cd .\java\project\SalmonTunnel && gradlew.bat build -x test -i && package.bat
+    - if: runner.os == 'Linux'
+      name: Build Java App on Linux
+      shell: bash
+      run: cd ./java/project/SalmonTunnel && ./gradlew build -x test -i && ./package.sh
       
     # Rename Package
-    - if: ${{ matrix.os == 'windows-latest' }}
-      name: Rename Java Windows x64 Package
-      shell: cmd
-      run: cd .\output\java && ren salmon-tunnel.zip salmon-tunnel.${{ github.ref_name }}.zip
+    - if: ${{ matrix.os == 'ubuntu-latest' }}
+      name: Rename Java Package
+      shell: bash
+      run: cd ./output/java && mv salmon-tunnel.zip salmon-tunnel.${{ github.ref_name }}.zip
       
-    # Upload JavaFx App
-    - if: ${{ matrix.os == 'windows-latest' }}
-      name: Upload Java Windows x64 Packages
+    # Upload Java App
+    - if: ${{ matrix.os == 'ubuntu-latest' }}
+      name: Upload Java App
       uses: actions/upload-artifact@v4
       with:
         name: salmon-tunnel

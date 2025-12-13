@@ -1,5 +1,5 @@
 Salmon Tunnel
-version: 0.9.1
+version: 1.0.0
 project: https://github.com/mku11/Salmon-Tunnel
 license: MIT License https://github.com/mku11/Salmon-Tunnel/blob/main/LICENSE
 

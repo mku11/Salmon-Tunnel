@@ -4,21 +4,19 @@ plugins {
 }
 
 group 'com.mku.salmon.tunnel'
-version '0.9.1'
+version '1.0.0'
 
 ext {
     junitVersion = '5.9.1'
-    salmonLibVersion = '3.0.1'
+    salmonLibVersion = '3.0.3'
 }
+
+// maven local repository, make sure you run setup.bat
+project.ext.set('salmonLibsPath', '../../../libs/salmon/')
 
 repositories {
     maven {
-        // uncomment for local repo
-        // allowInsecureProtocol true
-        // url 'http://localhost/repository/maven/releases'
-
-        // official salmon repo
-        url 'https://github.com/mku11/Repo/raw/main/maven/releases'
+        url uri(salmonLibsPath + "salmon-java")
     }
     mavenCentral()
 }
@@ -51,6 +49,14 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
 
+task copyDependencies(type: Sync) {
+    from(configurations.default) {
+        include("*.jar")
+    }
+    into 'libs'
+}
+build.dependsOn copyDependencies
+
 test {
     useJUnitPlatform()
 }
@@ -60,14 +66,11 @@ ext {
     javaMainClass = "com.mku.salmon.vault.main.Main"
 }
 
-// To run the app execute runApp instead of run task
-task runApp(type: JavaExec) {
+run {
     group = "application"
     description = "Run the application"
     classpath = sourceSets.main.runtimeClasspath
     main = javaMainClass
     jvmArgs = []
 }
-
-// run the unzipNative task first
-runApp.dependsOn build
+run.dependsOn build

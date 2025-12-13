@@ -24,7 +24,7 @@ jobs:
       matrix:
         java_version: [11]
         os: [windows-latest]
-    name: build.java.${{ matrix.os }}
+    name: build.java.${{ matrix.java_version }}.${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
     
@@ -92,7 +92,7 @@ jobs:
       matrix:
         java_version: [17]
         os: [windows-latest]
-    name: build.android.java${{ matrix.java_version }}. ${{ matrix.os }}
+    name: build.android.java${{ matrix.java_version }}.${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
     

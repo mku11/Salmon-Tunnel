@@ -8,5 +8,5 @@
     <string name="service_device">Service Device</string>
     <string name="buffer_size">Buffer Size (KBytes)</string>
     <string name="remote">Remote</string>
-    <string name="vnc_server_running_at">"Tunnel Server running at: %1$s"</string>
+    <string name="salmon_tunnel_running_at">"Salmon Tunnel running at: %1$s"</string>
 </resources>

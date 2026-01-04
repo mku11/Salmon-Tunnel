@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                             sb.append(" ");
                     }
                     binding.address.post(() -> {
-                        binding.address.setText(getString(R.string.vnc_server_running_at, sb.toString()));
+                        binding.address.setText(getString(R.string.salmon_tunnel_running_at, sb.toString()));
                     });
                 } catch (SocketException e) {
                     throw new RuntimeException(e);

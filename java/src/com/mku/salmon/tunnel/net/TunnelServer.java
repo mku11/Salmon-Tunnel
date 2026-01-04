@@ -25,6 +25,7 @@ SOFTWARE.
 
 import com.mku.convert.BitConverter;
 import com.mku.func.BiConsumer;
+import com.mku.func.Consumer;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,7 +37,6 @@ import java.net.SocketAddress;
 import java.net.SocketException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-import java.util.function.Consumer;
 
 public class TunnelServer {
     private final int port;

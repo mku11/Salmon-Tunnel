@@ -25,7 +25,7 @@ SOFTWARE.
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.function.Consumer;
+import com.mku.func.Consumer;
 
 public class TunnelManager {
     private final TunnelOptions options;

@@ -1,0 +1,3 @@
+[submodule "deps/SimpleIO"]
+	path = deps/SimpleIO
+	url = https://github.com/mku11/SimpleIO.git

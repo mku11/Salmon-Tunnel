@@ -1,0 +1,76 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.mku.salmon.tunnel'
+version '1.0.0'
+
+ext {
+    junitVersion = '5.9.1'
+    salmonLibVersion = '3.0.3'
+}
+
+// maven local repository, make sure you run setup.bat
+project.ext.set('salmonLibsPath', '../../../libs/salmon/')
+
+repositories {
+    maven {
+        url uri(salmonLibsPath + "salmon-java")
+    }
+    mavenCentral()
+}
+
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+application {
+    mainModule = 'com.mku.salmon.tunnel.main'
+    mainClass = 'com.mku.salmon.tunnel.main.Main'
+}
+
+sourceSets {
+    main {
+        java {
+            main.java.srcDirs += '../../src'}
+    }
+    main.resources.srcDirs += '../../res'
+    test.java.srcDirs += '../../test/salmon-tunnel-test-java/'
+}
+
+dependencies {
+    implementation("com.mku.salmon:salmon-core:${salmonLibVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+}
+
+task copyDependencies(type: Sync) {
+    from(configurations.default) {
+        include("*.jar")
+    }
+    into 'libs'
+}
+build.dependsOn copyDependencies
+
+test {
+    useJUnitPlatform()
+}
+
+
+ext {
+    javaMainClass = "com.mku.salmon.vault.main.Main"
+}
+
+run {
+    group = "application"
+    description = "Run the application"
+    classpath = sourceSets.main.runtimeClasspath
+    main = javaMainClass
+    jvmArgs = []
+}
+run.dependsOn build

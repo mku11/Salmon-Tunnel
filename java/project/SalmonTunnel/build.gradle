@@ -4,11 +4,11 @@ plugins {
 }
 
 group 'com.mku.salmon.tunnel'
-version '1.0.0'
+version '1.0.1'
 
 ext {
     junitVersion = '5.9.1'
-    salmonLibVersion = '3.0.3'
+    salmonLibVersion = '3.0.4'
 }
 
 // maven local repository, make sure you run setup.bat

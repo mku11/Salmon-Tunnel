@@ -1,5 +1,5 @@
 # Salmon Tunnel
-Salmon Tunnel is a client-server software that let you encrypt your network communications.  
+Salmon Tunnel is a client-server software that allows encryption of network communications.  
 It is an alternative to SSH tunneling and works with VNC, FTP, and any other TCP related protocol.  
 Provided Java and Android server/clients.  
 Salmon Tunnel is currently in beta stage.  

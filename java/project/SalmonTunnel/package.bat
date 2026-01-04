@@ -1,7 +1,7 @@
 @echo ON
 set CURRDIR=%CD%
 
-set VERSION=1.0.0
+set VERSION=1.0.1
 
 :: Salmon Tunnel
 set OUTPUT_ROOT=..\..\..\output

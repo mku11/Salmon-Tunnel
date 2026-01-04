@@ -1,5 +1,5 @@
 #!/bin/bash -x
-VERSION=1.0.0
+VERSION=1.0.1
 
 # Salmon Vault JavaFX
 OUTPUT_ROOT=../../../output
